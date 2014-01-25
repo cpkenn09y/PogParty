@@ -1,0 +1,20 @@
+.container {
+  background-color:red ;
+}
+
+.nav-bar {
+  background-color: orange;
+
+}
+
+.game-panel {
+  background-color:blue ;
+}
+
+.game-board {
+  background-color: white;
+}
+
+.slammer-container {
+  background-color: grey;
+}
