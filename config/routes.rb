@@ -1,5 +1,7 @@
 PogParty::Application.routes.draw do
 
+  devise_for :players
+
   root :to => 'game#index'
   
   # The priority is based upon order of creation:
