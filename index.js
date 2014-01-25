@@ -1,8 +1,15 @@
+
+$(document).ready(initializeRandomPog)
+
+function initializeRandomPog() {
+  var myPog = new Pog(1, 50, 50)
+}
+
 $(function(){
 
 	function PogCollection(){
 		this.flipped 	 = [];
-		this.unflipped = [];	
+		this.unflipped = [];
 	}
 
 	function Pog(status){
@@ -25,7 +32,7 @@ $(function(){
 		revert: "invalid"
 	});
 
-	$('.playing-board').droppable({
+	$('.game-board').droppable({
 		accept: ".slammer-on-deck",
 		drop: function(){
 			// calls dropSlammer();
@@ -36,3 +43,4 @@ $(function(){
 	console.log('shit works');
 	console.log(pogCollection);
 })
+
