@@ -1,18 +1,35 @@
 .container {
-  background-color:red ;
 }
 
 .nav-bar {
-  background-color: orange;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px rgba(0,0,0,0.1);
+}
 
+a {
+  color:grey;
+  text-decoration: none ;
+}
+
+.title {
+  color:#61e69d;
 }
 
 .game-panel {
-  background-color:blue ;
+  background-color: #D4BF97;
+  opacity: 0.70;
 }
 
 .game-board {
-  background-color: white;
+
+}
+
+.game-board-highlight{
+  background-color: #ddd;
+}
+
+.game-board-hover{
+  background-color: #bbb;
 }
 
 .slammer-container {
@@ -20,16 +37,21 @@
 }
 
 .pog {
-  height: 5em;
-  width: 5em;
+  height: 6em;
+  width: 6em;
+  top: 10em;
   border-radius: 10em;
   background-color: green;
   margin: 0 auto;
 }
 
-.slammer-on-deck {
-  background-image: url("http://bit.ly/KTxSe3");
-  width: 200px;
-  height: 200px;
+.slammer {
+  display: inline-block;
+  margin-left: 3%;
+}
+
+.slammer img{
+  height: 150px;
+  width: 150px;
   border-radius: 90%;
 }

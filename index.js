@@ -1,46 +1,35 @@
-
-$(document).ready(initializeRandomPog)
-
-function initializeRandomPog() {
-  var myPog = new Pog(1, 50, 50)
-}
-
 $(function(){
-
-	function PogCollection(){
-		this.flipped 	 = [];
-		this.unflipped = [];
-	}
-
-	function Pog(status){
-		this.status = status;
-	}
-
-	function dropSlammer(){
-
-	}
-
-	/////////////////////////
-
-	var pogCollection = new PogCollection();
-	for(var i=0; i<10; i++){
-		pogCollection.flipped.push(new Pog('unflipped'));
-	}
-
-
-	$('.slammer-on-deck').draggable({
-		revert: "invalid"
-	});
-
-	$('.game-board').droppable({
-		accept: ".slammer-on-deck",
-		drop: function(){
-			// calls dropSlammer();
-			// console.log("shits dropped!");
-		}
-	})
-
+	setDragDrop();
 	console.log('shit works');
-	console.log(pogCollection);
 })
 
+
+function setDragDrop(){
+	$('.slammer').draggable({ revert: "invalid" });
+
+	$('#pog-stack').droppable({
+		activeClass: "game-board-highlight",
+		hoverClass: "game-board-hover",
+		accept: ".slammer",
+		drop: dropAction
+	})
+}
+
+function dropAction(e, obj){
+	movePogs()
+}
+
+function movePogs(){
+	var pogs = $('.pog')
+	$.each(pogs, function(i, elem){
+		var pogPosition = $(elem).position()
+		$(elem).animate({
+			top:  pogPosition.top + randNum(150),
+			left: pogPosition.left + randNum(300)
+		})
+	})
+}
+
+function randNum(scale){
+	return (Math.round(Math.random()) * 2 - 1) * (Math.random() * scale)
+}
