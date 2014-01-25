@@ -2,8 +2,10 @@ PogParty::Application.routes.draw do
 
   devise_for :players
 
+  devise_for :players, :controllers => { :omniauth_callbacks => "players/omniauth_callbacks" }
+
   root :to => 'game#index'
-  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
