@@ -24,21 +24,34 @@ a {
 
 }
 
+.game-board-highlight{
+  background-color: #ddd;
+}
+
+.game-board-hover{
+  background-color: #bbb;
+}
+
 .slammer-container {
   background-color: grey;
 }
 
 .pog {
-  height: 5em;
-  width: 5em;
+  height: 6em;
+  width: 6em;
+  top: 10em;
   border-radius: 10em;
   background-color: green;
   margin: 0 auto;
 }
 
-.slammer-on-deck {
-  background-image: url("http://bit.ly/KTxSe3");
-  width: 200px;
-  height: 200px;
+.slammer {
+  display: inline-block;
+  margin-left: 3%;
+}
+
+.slammer img{
+  height: 150px;
+  width: 150px;
   border-radius: 90%;
 }
