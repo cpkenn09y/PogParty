@@ -26,3 +26,10 @@
   background-color: green;
   margin: 0 auto;
 }
+
+.slammer-on-deck {
+  background-image: url("http://bit.ly/KTxSe3");
+  width: 200px;
+  height: 200px;
+  border-radius: 90%;
+}

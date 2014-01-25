@@ -16,9 +16,3 @@ Pog.prototype.appendToBoard = function() {
   $('.' + LOCATIONTOAPPEND).append("<div id='" + this.id + "' class='"+ CSSCLASSOFOBJECT + "'>")
   $('#' + this.id).css({'top': this.y, 'left': this.x})
 }
-
-// $(document).ready(runThisShit)
-
-// function runThisShit() {
-//   var myPog = new Pog(1, 50, 50)
-// }

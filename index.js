@@ -2,7 +2,7 @@ $(function(){
 
 	function PogCollection(){
 		this.flipped 	 = [];
-		this.unflipped = [];	
+		this.unflipped = [];
 	}
 
 	function Pog(status){
