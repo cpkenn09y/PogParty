@@ -1,6 +1,6 @@
 PogParty::Application.routes.draw do
 
-  # root :to => 'game#index'
+  root :to => 'game#index'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

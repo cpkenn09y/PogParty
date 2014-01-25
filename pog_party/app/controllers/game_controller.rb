@@ -1,4 +1,9 @@
 class GameController < ApplicationController
+	
+	def index
+		
+	end
+
 	def drop_slammer(game_id)
 		game = Game.find(game_id)
 		flipped 	= []
