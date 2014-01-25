@@ -5,7 +5,7 @@ class CreatePogs < ActiveRecord::Migration
     	t.string :status, :default => 'unflipped'
     	t.string :image_url
     	t.integer :creator_id
-    	t.belongs_to :user
+    	t.belongs_to :player
     	t.belongs_to :game
 
       t.timestamps
