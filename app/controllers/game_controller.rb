@@ -36,10 +36,10 @@ class GameController < ApplicationController
 			return 'draw'
 		elsif player1_winnings > player2_winnings
 			player1 = Player.find(player1_id)
-			return player1_id
+			return player1.email
 		else
 			player2 = Player.find(player2_id)
-			return player2.name
+			return player2.email
 		end
 	end
 
@@ -57,6 +57,6 @@ class GameController < ApplicationController
 				unflipped << pog
 			end
 		end
-		{flipped: flipped, unflipped: unflipped}.to_json
+		render :json => {flipped: flipped, unflipped: unflipped}.to_json
 	end
 end
