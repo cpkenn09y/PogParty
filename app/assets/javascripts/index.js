@@ -1,3 +1,5 @@
+TIMEUNTILRESTACK = 1200
+
 var ApplicationController = function() {
 
 }
@@ -8,7 +10,7 @@ ApplicationController.prototype.run = function(){
 }
 
 ApplicationController.prototype.setDragDrop = function(){
-	$('.slammer').draggable({ revert: "invalid" });
+	$('.slammer').draggable({ revert: true });
 	self = this
 	$('#pog-stack').droppable({
 		activeClass: "game-board-highlight",
@@ -24,7 +26,12 @@ ApplicationController.prototype.placeCurrentPogCounter = function() {
 	$('.pog').eq(0).text(currentStackCount)
 }
 
+ApplicationController.prototype.removePogStackCounter = function() {
+	$('.pog').eq(0).text()
+}
+
 ApplicationController.prototype.afterMath = function(e, obj){
+	self.removePogStackCounter()
 	self.movePogs()
 
 	$.ajax({
