@@ -10,3 +10,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'debugger'
+  gem 'binding_of_caller'
+  gem 'better_errors'
+end
