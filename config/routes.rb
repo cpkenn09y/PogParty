@@ -1,15 +1,12 @@
 PogParty::Application.routes.draw do
 
-  root :to => 'game#index'
-  
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+  resources :players
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
+  devise_for :players, :controllers => { :omniauth_callbacks => "players/omniauth_callbacks" }
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
+  devise_scope :player do
+     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_player_session
+  end
+
+  root :to => 'games#index'
 end
