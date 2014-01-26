@@ -5,7 +5,7 @@ class GamesController < ApplicationController
 	end
 
 	def create # APPEARS AS BUTTON AT TOP OF INDEX
-		game = Game.create(player1_id: params[:player_id])
+		game = Game.create(player1_id: current_player.uid)
 	end
 
 	def join
