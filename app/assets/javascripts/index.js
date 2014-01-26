@@ -23,11 +23,11 @@ ApplicationController.prototype.setDragDrop = function(){
 ApplicationController.prototype.placeCurrentPogCounter = function() {
 	$pogs = $('.pog')
 	currentStackCount = $pogs.length
-	$('.pog').eq(0).text(currentStackCount)
+	$('#stack-counter').text(currentStackCount)
 }
 
 ApplicationController.prototype.removePogStackCounter = function() {
-	$('.pog').eq(0).text()
+	$('#stack-counter').text('')
 }
 
 ApplicationController.prototype.afterMath = function(e, obj){
@@ -40,10 +40,7 @@ ApplicationController.prototype.afterMath = function(e, obj){
 	}).done(function(pogOrientation){
 		faceDownPogs = pogOrientation.face_down
 		self.visualizeFaceDown(faceDownPogs)
-		// Put the number of pogs written on the top one
-		// append a span and center it, for the count
-		// TAKE THEM OUT OF THE DOM
-		// Set TimeOut and then RESET
+		setTimeout(function(){alert("Hello")},TIMEUNTILRESTACK)
 	})
 }
 

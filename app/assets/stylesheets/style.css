@@ -56,6 +56,14 @@ a {
   border-radius: 90%;
 }
 
+#stack-counter {
+  background-color: red;
+  height: 2em;
+  width: 2em;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .face-down {
   background-color: blue;
 }
