@@ -1,5 +1,5 @@
-TIMEUNTILRESTACK = 3000
-TIMEUNTILCOLLECT = 1000
+TIMEUNTILRESTACK = 1650
+TIMEUNTILCOLLECT = 800
 TIMEUNTILCOLLECTEDDISAPPEAR = (TIMEUNTILRESTACK - TIMEUNTILCOLLECT) / 2
 
 var ApplicationController = function() {
@@ -33,7 +33,6 @@ ApplicationController.prototype.removePogStackCounter = function() {
 }
 
 ApplicationController.prototype.afterMath = function(e, obj){
-	debugger
 	self.removePogStackCounter()
 	self.movePogs()
 
