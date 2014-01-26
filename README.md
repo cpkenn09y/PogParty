@@ -2,6 +2,16 @@
 
 Mission: Create a Pog Game for Global Game Jam 2014
 
+## Use MySQL for Development
+
+Check install:
+
+```
+mysql --version
+```
+
+
+
 ##Team Members
 * Greg Varias [@gregRV](https://github.com/gregRV)
 * Tyler Olson [@TGOlson](https://github.com/TGOlson)
