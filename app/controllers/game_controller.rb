@@ -5,7 +5,7 @@ class GameController < ApplicationController
 	end
 
 	def run_game
-		render :json => {face_down: [0, 3, 4], unflipper: [1, 2, 5, 6, 7]}.to_json
+		render :json => {face_down: [0, 3, 4], face_up: [1, 2, 5, 6, 7]}.to_json
 	end
 
 

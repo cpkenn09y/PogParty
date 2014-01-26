@@ -1,4 +1,5 @@
-TIMEUNTILRESTACK = 1200
+TIMEUNTILRESTACK = 3000
+TIMEUNTILCOLLECT = 1000
 
 var ApplicationController = function() {
 
@@ -39,9 +40,25 @@ ApplicationController.prototype.afterMath = function(e, obj){
 	  url: "/games/run_game/"
 	}).done(function(pogOrientation){
 		faceDownPogs = pogOrientation.face_down
+		faceUpPogs = pogOrientation.face_up
 		self.visualizeFaceDown(faceDownPogs)
-		setTimeout(function(){alert("Hello")},TIMEUNTILRESTACK)
+		setTimeout(function(){ self.collectFaceUpPogs(faceUpPogs) },TIMEUNTILCOLLECT)
+		setTimeout(function(){ self.updatePostAfterMath() },TIMEUNTILRESTACK)
 	})
+}
+
+ApplicationController.prototype.collectFaceUpPogs = function(faceUpPogs) {
+	faceUpPogs.forEach(function(id) {
+		$('.pog#' + id).addClass('face-up')
+	})
+	$('.face-up').animate({
+		top:  566,
+		left: 0
+	})
+}
+
+ApplicationController.prototype.updatePostAfterMath = function(){
+	$('.pog').removeAttr("style")
 }
 
 ApplicationController.prototype.visualizeFaceDown = function(faceDownPogs) {
