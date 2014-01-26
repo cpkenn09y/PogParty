@@ -33,8 +33,11 @@ a {
 }
 
 .slammer-container {
-  background-color: grey;
+  font-family: 'NovecentowideLightBold', 'Helvetica', 'Arial', sans-serif;
+background-color: aliceblue;
+box-shadow: 0 -1px 0 rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1);
 }
+
 
 .pog {
   height: 6em;

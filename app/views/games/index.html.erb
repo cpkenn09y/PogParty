@@ -1,12 +1,45 @@
-<h1>Game Index</h1>
-<%= button_to 'NEW GAME', games_path %>
-<br><br>
+<div class ="container">
 
-<% @open_games.each do |game| %>
-	Status: <%= game.status.upcase %>
-	<br>
-	Created At: <%= game.created_at.to_s %>
-	<br>
-	<button>JOIN GAME</button>
-	<br><br>
-<% end %>
+  <div class="nav-bar">
+    <h3 class="title"> Pog Party</h3>
+    <nav class ="nav">
+      <img class="toggle-button" src="http://i.imgur.com/K2lUwbo.png"/>
+      <a href="#"> How it Works</a>
+      <a href="#"> Inventory</a>
+
+      <% if player_signed_in? %>
+        <%= image_tag current_player.image, height: 32, width: 32 %>
+        <%= current_player.name %>
+      <%= link_to 'Logout', destroy_player_session_path %>
+      <% else %>
+      <%= link_to "Sign in with Facebook", player_omniauth_authorize_path(:facebook) %>
+      <% end %>
+    </nav>
+  </div>
+  <div class="game-panel">
+    <div class='game-container'>
+      <div class="game-board">
+        <div id='pog-stack'>
+          <div class='pog'></div>
+          <div class='pog'></div>
+          <div class='pog'></div>
+          <div class='pog'></div>
+          <div class='pog'></div>
+          <div class='pog'></div>
+          <div class='pog'></div>
+        </div>
+
+      </div>
+      <div class="slammer-container">
+        <p>Slammer Container</p>
+        <div class='slammer'>
+          <img src="http://bit.ly/KTxSe3"/>
+        </div>
+
+        <div class='slammer'>
+          <img src="http://bit.ly/KTxSe3"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
