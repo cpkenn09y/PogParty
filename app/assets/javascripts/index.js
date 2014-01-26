@@ -1,5 +1,6 @@
 TIMEUNTILRESTACK = 3000
 TIMEUNTILCOLLECT = 1000
+TIMEUNTILCOLLECTEDDISAPPEAR = (TIMEUNTILRESTACK - TIMEUNTILCOLLECT) / 2
 
 var ApplicationController = function() {
 
@@ -32,6 +33,7 @@ ApplicationController.prototype.removePogStackCounter = function() {
 }
 
 ApplicationController.prototype.afterMath = function(e, obj){
+	debugger
 	self.removePogStackCounter()
 	self.movePogs()
 
@@ -55,9 +57,19 @@ ApplicationController.prototype.collectFaceUpPogs = function(faceUpPogs) {
 		top:  566,
 		left: 0
 	})
+	setTimeout(function(){ self.removeFaceUpFromDOM() },TIMEUNTILCOLLECTEDDISAPPEAR)
+}
+
+ApplicationController.prototype.removeFaceUpFromDOM = function() {
+	$('.face-up').remove()
 }
 
 ApplicationController.prototype.updatePostAfterMath = function(){
+	self.resetPogToCenter()
+	self.placeCurrentPogCounter()
+}
+
+ApplicationController.prototype.resetPogToCenter = function() {
 	$('.pog').removeAttr("style")
 }
 
