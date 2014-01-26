@@ -1,0 +1,2 @@
+class PogsController < ApplicationController
+end
