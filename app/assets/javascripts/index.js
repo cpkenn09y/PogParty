@@ -2,6 +2,11 @@ var ApplicationController = function() {
 
 }
 
+ApplicationController.prototype.run = function(){
+	this.setDragDrop();
+	this.placeCurrentPogCounter()
+}
+
 ApplicationController.prototype.setDragDrop = function(){
 	$('.slammer').draggable({ revert: "invalid" });
 	self = this
@@ -11,6 +16,12 @@ ApplicationController.prototype.setDragDrop = function(){
 		accept: ".slammer",
 		drop: self.afterMath
 	})
+}
+
+ApplicationController.prototype.placeCurrentPogCounter = function() {
+	$pogs = $('.pog')
+	currentStackCount = $pogs.length
+	$('.pog').eq(0).text(currentStackCount)
 }
 
 ApplicationController.prototype.afterMath = function(e, obj){
@@ -50,14 +61,7 @@ ApplicationController.prototype.randNum = function(scale){
 	return (Math.round(Math.random()) * 2 - 1) * (Math.random() * scale)
 }
 
-ApplicationController.prototype.run = function(){
-	// debugger
-	this.setDragDrop();
-}
-
-
 $(document).ready(function() {
-	// debugger
 	myApplication = new ApplicationController()
 	myApplication.run()
 })
