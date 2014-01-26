@@ -3,7 +3,6 @@ $(function(){
 	console.log('shit works');
 })
 
-
 function setDragDrop(){
 	$('.slammer').draggable({ revert: "invalid" });
 
@@ -11,12 +10,27 @@ function setDragDrop(){
 		activeClass: "game-board-highlight",
 		hoverClass: "game-board-hover",
 		accept: ".slammer",
-		drop: dropAction
+		drop: afterMath
 	})
 }
 
-function dropAction(e, obj){
+function afterMath(e, obj){
 	movePogs()
+
+	$.ajax({
+	  type: "POST",
+	  url: "/games/run_game/"
+	}).done(function(pogOrientation){
+		faceDownPogs = pogOrientation.face_down
+		visualizeFaceDown(faceDownPogs)
+		// TAKE THEM OUT OF THE DOM
+	})
+}
+
+function visualizeFaceDown(faceDownPogs) {
+	faceDownPogs.forEach(function(id) {
+		$('.pog#' + id).addClass('face-down')
+	})
 }
 
 function movePogs(){

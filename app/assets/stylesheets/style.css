@@ -55,3 +55,7 @@ a {
   width: 150px;
   border-radius: 90%;
 }
+
+.face-down {
+  background-color: blue;
+}
