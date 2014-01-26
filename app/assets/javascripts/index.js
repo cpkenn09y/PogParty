@@ -1,6 +1,13 @@
 $(function(){
 	setDragDrop();
 	console.log('shit works');
+
+$('#clickable_div').mouseover( function(){
+    $('#nav_menu').slideDown();
+})
+$('#wrap').mouseleave( function(){
+    $('#nav_menu').slideUp();
+});
 })
 
 
@@ -33,3 +40,6 @@ function movePogs(){
 function randNum(scale){
 	return (Math.round(Math.random()) * 2 - 1) * (Math.random() * scale)
 }
+
+
+

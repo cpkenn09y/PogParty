@@ -14,6 +14,16 @@ body {
   top: 5px;
   display: none;
 }
+#clickable_div {
+  width:80px;
+  height:60px; background-image: url('http://i.imgur.com/K2lUwbo.png')}
+*{margin:0; padding:0}
+
+#nav_menu{width:100px; height:auto; background-color:#CCC;display:none;}
+
+#wrap{ width:120px;
+display:none;}
+
 
 .nav-bar {
   width: 100%;
@@ -26,17 +36,21 @@ body {
   font-family: 'NovecentowideLightBold', 'Helvetica', 'Arial', sans-serif;
   background-color: #FFFFFF;
   box-shadow: 0px 4px rgba(0,0,0,0.1);
-  z-index: 999;
+  z-index: 1;
   position: fixed;
   top: 0;
 }
 
 .nav {
+  display: inline;
   float: right;
   position: relative;
   bottom: 40px;
   margin-right: 4em;
   padding-right: 4em;
+  z-index: 10;
+  left: 6em;
+  top: .7em;
 }
 a {
   padding-right: 10px;

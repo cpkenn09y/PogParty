@@ -2,14 +2,27 @@
 
   <div class="nav-bar">
     <h3 class="title"> Pog Party</h3>
+      <div id='wrap'>
+        <div id="clickable_div"></div>
+          <div id="nav_menu">
+              <ul>
+                  <p>How it Works</p>
+                  <p>Inventory</p>
+                  <p><% if player_signed_in? %>
+          <%= image_tag current_player.image, height: 32, width: 32 %>
+        <%= link_to 'Logout', destroy_player_session_path %>
+        <% else %>
+        <%= link_to "Sign in with Facebook", player_omniauth_authorize_path(:facebook) %>
+        <% end %></p>
+              </ul>
+          </div>
+        </div>
+      </div>
     <nav class ="nav">
-      <img class="toggle-button" src="http://i.imgur.com/K2lUwbo.png"/>
       <a href="#"> How it Works</a>
       <a href="#"> Inventory</a>
-
       <% if player_signed_in? %>
         <%= image_tag current_player.image, height: 32, width: 32 %>
-        <%= current_player.name %>
       <%= link_to 'Logout', destroy_player_session_path %>
       <% else %>
       <%= link_to "Sign in with Facebook", player_omniauth_authorize_path(:facebook) %>

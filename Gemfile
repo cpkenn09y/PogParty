@@ -5,8 +5,6 @@ gem 'rails', '3.2.13'
 gem 'sqlite3'
 gem 'pg'
 
-gem 'pg'
-gem 'mysql2'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
