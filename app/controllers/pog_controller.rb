@@ -1,2 +1,2 @@
-class PogController < ApplicationController
+class PogsController < ApplicationController
 end
