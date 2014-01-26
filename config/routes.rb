@@ -1,15 +1,11 @@
 PogParty::Application.routes.draw do
 
-  root :to => 'game#index'
-  
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
+  root :to => 'games#index'
 
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
+  resources :players, only: [:new, :create] do
+  	resources :pogs, only: [:new, :create]
+  	resources :games, only: [:create]
+  end
 
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
+  resources :games, only: [:index, :new, :create]
 end

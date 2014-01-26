@@ -1,0 +1,12 @@
+<h1>Game Index</h1>
+<!-- NEW GAME BUTTON -->
+<br><br>
+
+<% @open_games.each do |game| %>
+	Status: <%= game.status.upcase %>
+	<br>
+	Created At: <%= game.created_at.to_s %>
+	<br>
+	<button>JOIN GAME</button>
+	<br><br>
+<% end %>

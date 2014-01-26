@@ -1,6 +1,15 @@
 class GamesController < ApplicationController
 	
 	def index
+		@open_games = Game.where(status: 'open')
+	end
+
+	def create # APPEARS AS BUTTON AT TOP OF INDEX
+		game = Game.create(player1_id: params[:player_id])
+	end
+
+	def join
+		# FOR PLAYER 2 JOINING GAME
 	end
 
 	def run_game
