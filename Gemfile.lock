@@ -67,7 +67,6 @@ GEM
     multi_json (1.8.4)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mysql2 (0.3.14)
     oauth2 (0.9.3)
       faraday (>= 0.8, < 0.10)
       jwt (~> 0.1.8)
@@ -152,12 +151,9 @@ DEPENDENCIES
   devise
   dotenv-rails
   jquery-rails
-  mysql2
   omniauth-facebook
   pg
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   sqlite3
-  therubyracer
-  twitter-bootstrap-rails
   uglifier (>= 1.0.3)
