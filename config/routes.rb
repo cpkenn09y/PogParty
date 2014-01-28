@@ -7,7 +7,6 @@ PogParty::Application.routes.draw do
   end
   
   # resources :pogs, only: [:new, :create]
-
   # resources :games, only: [:index, :create]
 
   devise_for :players, :controllers => { :omniauth_callbacks => "players/omniauth_callbacks" }

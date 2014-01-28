@@ -5,7 +5,8 @@ class GamesController < ApplicationController
 	end
 
 	def create # APPEARS AS BUTTON AT TOP OF INDEX
-		game = Game.create(player1_id: current_player.uid)
+		# need to complete helper method current_player to use!
+		game = Game.create(player1_id: current_player.id)
 	end
 
 	def join
