@@ -1,5 +1,5 @@
 development:
-  adapter: mysql2
+  adapter: sqlite3
   database: pog_party_dev
   pool: 5
   timeout: 5000
@@ -7,15 +7,9 @@ development:
   password: pass
 
 test:
-  adapter: mysql2
+  adapter: sqlite3
   database: pog_party_test
   pool: 5
   timeout: 5000
   username: root
   password: pass
-
-production:
-  adapter: sqlite3
-  database: pog_party_prod
-  pool: 5
-  timeout: 5000
