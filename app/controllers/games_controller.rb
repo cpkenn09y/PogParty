@@ -1,7 +1,8 @@
 class GamesController < ApplicationController
-	
+
 	def index
 		@open_games = Game.where(status: 'open')
+		@game = Game.create()
 	end
 
 	def create # APPEARS AS BUTTON AT TOP OF INDEX
@@ -15,7 +16,7 @@ class GamesController < ApplicationController
 
 	def run_game
 		game_id = params[:game_id]
-		pog_status = drop_slammer(game_id)
+		pog_status = drop_slammer(game_id, 1)
 		return determine_and_set_winner(game_id) if game_over?(game_id)
 		pog_status
 	end

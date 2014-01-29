@@ -38,10 +38,11 @@ ApplicationController.prototype.afterMath = function(e, obj){
 
 	$.ajax({
 	  type: "POST",
-	  url: "/games/run_game/"
+	  url: "/games/1/run_game/"
 	}).done(function(pogOrientation){
 		faceDownPogs = pogOrientation.face_down
 		faceUpPogs = pogOrientation.face_up
+		debugger
 		self.visualizeFaceDown(faceDownPogs)
 		setTimeout(function(){ self.collectFaceUpPogs(faceUpPogs) },TIMEUNTILCOLLECT)
 		setTimeout(function(){ self.updatePostAfterMath() },TIMEUNTILRESTACK)
@@ -73,6 +74,7 @@ ApplicationController.prototype.resetPogToCenter = function() {
 }
 
 ApplicationController.prototype.visualizeFaceDown = function(faceDownPogs) {
+	// debugger
 	faceDownPogs.forEach(function(id) {
 		$('.pog#' + id).addClass('face-down')
 	})
