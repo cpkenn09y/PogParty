@@ -1,9 +1,12 @@
 PogParty::Application.routes.draw do
 
-  root :to => 'game#index'
+  resources :players
 
-  resources :games, only: [:new, :edit, :update]
+  devise_for :players, :controllers => { :omniauth_callbacks => "players/omniauth_callbacks" }
 
-  post "games/run_game", to: "game#run_game", as: :run_game
+  devise_scope :player do
+     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_player_session
+  end
 
+  root :to => 'games#index'
 end

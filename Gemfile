@@ -1,8 +1,13 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'pg'
 gem 'jquery-rails'
+gem 'sqlite3'
+
+gem 'dotenv-rails', :groups => [:development, :test]
+
+gem 'devise'
+gem 'omniauth-facebook'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

@@ -96,4 +96,4 @@ ApplicationController.prototype.randNum = function(scale){
 $(document).ready(function() {
 	myApplication = new ApplicationController()
 	myApplication.run()
-})
+});
