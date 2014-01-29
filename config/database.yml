@@ -11,11 +11,3 @@ test:
   database: pog_party_test
   pool: 5
   timeout: 5000
-  username: root
-  password: pass
-
-production:
-  adapter: sqlite3
-  database: pog_party_prod
-  pool: 5
-  timeout: 5000
