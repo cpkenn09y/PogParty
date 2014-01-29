@@ -3,6 +3,7 @@ class CreateGames < ActiveRecord::Migration
     create_table :games do |t|
     	t.integer :player1_id
     	t.integer :player2_id
+    	t.string	:status, :default => 'open'
     	t.integer :current_turn, :default => nil
     	t.integer :winner_player_id, :default => nil
 
