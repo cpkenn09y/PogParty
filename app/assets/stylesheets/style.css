@@ -58,3 +58,16 @@ box-shadow: 0 -1px 0 rgba(0,0,0,.5), 0 1px 0 rgba(255,255,255,.1);
   width: 150px;
   border-radius: 90%;
 }
+
+#stack-counter {
+  height: 2em;
+  width: 2em;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.face-down {
+  background-color: blue;
+}
