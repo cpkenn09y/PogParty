@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(:version => 20140126012122) do
   create_table "games", :force => true do |t|
     t.integer  "player1_id"
     t.integer  "player2_id"
+    t.string   "status",           :default => "open"
     t.integer  "current_turn"
     t.integer  "winner_player_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   create_table "players", :force => true do |t|
