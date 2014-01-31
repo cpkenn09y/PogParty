@@ -4,6 +4,7 @@ Devise.setup do |config|
 
   require "omniauth-facebook"
   config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET']
+  config.secret_key = 'some1234keyq23' if Rails.env == 'development'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
