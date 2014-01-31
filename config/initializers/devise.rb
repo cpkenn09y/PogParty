@@ -3,6 +3,7 @@
 Devise.setup do |config|
 
   require "omniauth-facebook"
+  config.secret_key = 'some1234keyq23' if Rails.env == 'development'
   config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET']
 
   # ==> Mailer Configuration
