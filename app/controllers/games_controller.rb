@@ -14,11 +14,6 @@ class GamesController < ApplicationController
 		game = Game.create(player1_id: current_player.id)
 	end
 
-	def join
-		# FOR PLAYER 2 JOINING GAME
-		# FOR PLAYER 2 JOINING GAME
-	end
-
 	def run_game
 		game_id = params[:game_id].to_i
 		@game = retrive_game_object(game_id)

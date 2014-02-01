@@ -2,7 +2,6 @@ class Game < ActiveRecord::Base
   has_many :pogs
 
   def init(number_of_pogs=10 )
-    # debugger
     @number_of_pogs = number_of_pogs
     create_pogs
   end
