@@ -74,7 +74,6 @@ ApplicationController.prototype.resetPogToCenter = function() {
 }
 
 ApplicationController.prototype.visualizeFaceDown = function(faceDownPogs) {
-	// debugger
 	faceDownPogs.forEach(function(id) {
 		$('.pog#' + id).addClass('face-down')
 	})

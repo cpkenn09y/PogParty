@@ -1,5 +1,7 @@
 PogParty::Application.routes.draw do
 
+  devise_for :installs
+
 	# does not consider devise, will revise later
   resources :players, only: [:new, :create] do
   	resources :pogs, only: [:new, :create, :show]
