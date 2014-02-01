@@ -13,6 +13,7 @@ class GamesController < ApplicationController
 
 	def join
 		# FOR PLAYER 2 JOINING GAME
+		# FOR PLAYER 2 JOINING GAME
 	end
 
 	def run_game

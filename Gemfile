@@ -6,9 +6,6 @@ gem 'sqlite3'
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
-gem 'devise'
-gem 'omniauth-facebook'
-
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
