@@ -2,8 +2,8 @@ TIMEUNTILRESTACK = 1650
 TIMEUNTILCOLLECT = 800
 TIMEUNTILCOLLECTEDDISAPPEAR = (TIMEUNTILRESTACK - TIMEUNTILCOLLECT) / 2
 
-var ApplicationController = function() {
-
+var ApplicationController = function(game_id) {
+	this.game_id = game_id
 }
 
 ApplicationController.prototype.run = function(){
@@ -38,11 +38,10 @@ ApplicationController.prototype.afterMath = function(e, obj){
 
 	$.ajax({
 	  type: "POST",
-	  url: "/games/1/run_game/"
+	  url: "/games/"+self.game_id+"/run_game/"
 	}).done(function(pogOrientation){
 		faceDownPogs = pogOrientation.face_down
 		faceUpPogs = pogOrientation.face_up
-		debugger
 		self.visualizeFaceDown(faceDownPogs)
 		setTimeout(function(){ self.collectFaceUpPogs(faceUpPogs) },TIMEUNTILCOLLECT)
 		setTimeout(function(){ self.updatePostAfterMath() },TIMEUNTILRESTACK)
@@ -95,6 +94,7 @@ ApplicationController.prototype.randNum = function(scale){
 }
 
 $(document).ready(function() {
-	myApplication = new ApplicationController()
+	game_id = Number($('.game-board')[0].id)
+	myApplication = new ApplicationController(game_id)
 	myApplication.run()
 });
