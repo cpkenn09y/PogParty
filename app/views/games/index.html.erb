@@ -11,15 +11,10 @@
   <div class="game-panel">
     <div class='game-container'>
       <div class="game-board" id=<%= @game_id %>>
-        <div id='pog-stack'>
-          <div class='pog' id='0'></div>
-          <div class='pog' id='1'></div>
-          <div class='pog' id='2'></div>
-          <div class='pog' id='3'></div>
-          <div class='pog' id='4'></div>
-          <div class='pog' id='5'></div>
-          <div class='pog' id='6'></div>
+        <div class='pog-stack' id=<%=@number_of_pogs%>>
+          <%= render partial: "pogs", object: @pog_ids %>
         </div>
+
         <div id='stack-counter'></div>
 
       </div>

@@ -5,6 +5,8 @@ class GamesController < ApplicationController
 		@game = Game.create()
 		@game_id = @game.id
 		@game.init
+		@pog_ids = []
+		@game.pogs.each {|pog| @pog_ids << pog.id}
 	end
 
 	def create # APPEARS AS BUTTON AT TOP OF INDEX

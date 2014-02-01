@@ -14,7 +14,7 @@ ApplicationController.prototype.run = function(){
 ApplicationController.prototype.setDragDrop = function(){
 	$('.slammer').draggable({ revert: true });
 	self = this
-	$('#pog-stack').droppable({
+	$('.pog-stack').droppable({
 		activeClass: "game-board-highlight",
 		hoverClass: "game-board-hover",
 		accept: ".slammer",
@@ -49,8 +49,8 @@ ApplicationController.prototype.afterMath = function(e, obj){
 }
 
 ApplicationController.prototype.collectFaceUpPogs = function(faceUpPogs) {
-	faceUpPogs.forEach(function(id) {
-		$('.pog#' + id).addClass('face-up')
+	faceUpPogs.forEach(function(pog) {
+		$('.pog#' + pog.id).addClass('face-up')
 	})
 	$('.face-up').animate({
 		top:  566,
@@ -73,8 +73,9 @@ ApplicationController.prototype.resetPogToCenter = function() {
 }
 
 ApplicationController.prototype.visualizeFaceDown = function(faceDownPogs) {
-	faceDownPogs.forEach(function(id) {
-		$('.pog#' + id).addClass('face-down')
+	faceDownPogs.forEach(function(pog) {
+		// debugger
+		$('.pog#' + pog.id).addClass('face-down')
 	})
 }
 
