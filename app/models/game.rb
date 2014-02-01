@@ -1,14 +1,15 @@
 class Game < ActiveRecord::Base
   has_many :pogs
 
-  def initialize()
+  def initialize(keen, ie, number_of_pogs=10 )
     @number_of_pogs = number_of_pogs
     @pogs = []
     create_pogs
   end
 
   def create_pogs
-    number_of_pogs.times do
+    @number_of_pogs.times do
+      debugger
       @pogs << Pog.create()
     end
   end

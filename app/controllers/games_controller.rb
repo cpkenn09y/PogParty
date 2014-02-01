@@ -3,7 +3,6 @@ class GamesController < ApplicationController
 	def index
 		# @open_games = Game.where(status: 'open')
 		@game = Game.create()
-		debugger
 	end
 
 	def create # APPEARS AS BUTTON AT TOP OF INDEX
