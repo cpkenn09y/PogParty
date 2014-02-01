@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20140201050503) do
     t.datetime "created_at",                          :null => false
     t.datetime "updated_at",                          :null => false
     t.integer  "game_id"
-    t.string   "status",     :default => "unflipped"
+    t.string   "status",     :default => "face_down"
   end
 
 end

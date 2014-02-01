@@ -20,23 +20,23 @@ class Game < ActiveRecord::Base
   # def game_over?
   #   @game = Game.find
   #   @game.pogs.each do |pog|
-  #     return false if pog.status == 'unflipped'
+  #     return false if pog.status == 'face_down'
   #   end
   #   true
   # end
 
   def drop_slammer
-    flipped   = []
-    unflipped = []
+    face_up   = []
+    face_down = []
     self.pogs.each do |pog|
       if [true,false].sample == true
-        pog.status = 'flipped'
-        flipped << pog
+        pog.status = 'face_up'
+        face_up << pog
       else
-        unflipped << pog
+        face_down << pog
       end
     end
-    {flipped: flipped, unflipped: unflipped}
+    {face_up: face_up, face_down: face_down}
   end
 
 end
