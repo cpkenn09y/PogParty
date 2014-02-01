@@ -18,11 +18,11 @@ class GamesController < ApplicationController
 	end
 
 	def run_game
-		game_id = params[:game_id]
+		game_id = params[:game_id].to_i
 		@game = retrive_game_object(game_id)
 		pog_status = @game.drop_slammer
 		debugger
-		return determine_and_set_winner(game_id) if game_over?(game_id)
+		# return determine_and_set_winner(game_id) if game_over?(game_id)
 		pog_status
 		# render :json => {flipped: flipped, unflipped: unflipped}.to_json
 	end
