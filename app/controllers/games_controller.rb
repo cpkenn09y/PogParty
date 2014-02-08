@@ -9,8 +9,7 @@ class GamesController < ApplicationController
 		@game.pogs.each {|pog| @pog_ids << pog.id}
 	end
 
-	def create # APPEARS AS BUTTON AT TOP OF INDEX
-		# need to complete helper method current_player to use!
+	def create
 		game = Game.create(player1_id: current_player.id)
 	end
 

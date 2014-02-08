@@ -46,7 +46,6 @@ ApplicationController.prototype.afterMath = function(e, obj){
 	}).done(function(pogOrientation){
 		faceDownPogs = pogOrientation.face_down
 		faceUpPogs = pogOrientation.face_up
-		// self.visualizeFaceDown(faceDownPogs)
 		setTimeout(function(){ self.collectFaceUpPogs(faceUpPogs) },TIMEUNTILCOLLECT)
 		setTimeout(function(){ self.updatePostAfterMath() },TIMEUNTILRESTACK)
 	})

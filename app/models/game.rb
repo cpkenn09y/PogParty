@@ -1,4 +1,5 @@
 class Game < ActiveRecord::Base
+  belongs_to :player
   has_many :pogs
 
   def init(number_of_pogs=10 )
