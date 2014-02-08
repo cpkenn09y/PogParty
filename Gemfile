@@ -3,7 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'sqlite3'
-gem 'devise', '1.4.7'
+gem 'devise'
+gem 'omniauth-facebook'
+
 
 gem 'dotenv-rails', :groups => [:development, :test]
 
